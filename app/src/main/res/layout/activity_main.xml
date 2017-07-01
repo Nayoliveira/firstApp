@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="131dp"
+            android:layout_height="92dp"
+            android:layout_gravity="center"
+            android:onClick="pelada"
+            android:text="Pelada" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="131dp"
+            android:layout_height="92dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:onClick="cadastrar"
+            android:text="Cadastrar Jogador" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="131dp"
+            android:layout_height="92dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:onClick="ver"
+            android:text="Jogadores" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="131dp"
+            android:layout_height="92dp"
+            android:layout_gravity="center"
+            android:onClick="pelada"
+            android:text="Pelada" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
