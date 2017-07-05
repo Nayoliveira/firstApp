@@ -38,7 +38,7 @@ public class JogadorCall  extends ListActivity{
         Toast.makeText(this, "Student selected: " + jogador.nome, Toast.LENGTH_SHORT).show();
 
         //Call StudentEdit activity passing info about the selected student
-        Uri uri = Uri.parse("tel" + jogador.telefone);
+        Uri uri = Uri.parse("tel:" + jogador.telefone);
 
         Intent it = new Intent(Intent.ACTION_CALL, uri);
         if (ActivityCompat.checkSelfPermission(this,

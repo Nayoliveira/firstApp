@@ -27,8 +27,11 @@ public class JogadoresList extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Jogador jogador = (Jogador) this.getListAdapter().getItem(position);
-//        Toast.makeText(this, "Player selected: " + jogador.nome, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Player selected: " + jogador.nome, Toast.LENGTH_SHORT).show();
 
+        Intent it = new Intent(this, JogadorCall.class);
+        it.putExtra("position", position);
+        startActivity(it);
     }
 
     @Override
@@ -46,12 +49,6 @@ public class JogadoresList extends ListActivity {
 
     }
 
-    public void showPopup(View view){
-        PopupMenu popup = new PopupMenu(this, view);
-        MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.menu_popup, popup.getMenu());
-        popup.show();
-    }
     public void loadStudents() {
         FileInputStream fis;
         try {

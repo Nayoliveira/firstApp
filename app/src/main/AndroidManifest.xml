@@ -30,7 +30,9 @@
         <activity android:name=".JogadoresList" />
         <activity android:name=".PeladaNew" />
         <activity android:name=".VerTimes" />
-        <activity android:name=".PeladaEdit"/>
+        <activity android:name=".PeladaEdit" />
+        <activity android:name=".JogadorEdit"/>
+        <activity android:name=".JogadorCall"/>
     </application>
 
 </manifest>
