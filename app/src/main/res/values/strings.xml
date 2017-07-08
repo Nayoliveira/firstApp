@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">FutManNayara</string>
+    <string name="app_name">Pelada UFOP</string>
+    <string name="app_gallery">Galeria</string>
+    <string name="app_cam">Camera</string>
+    <string name="app_delete">Excluir</string>
+
+
 </resources>

@@ -10,10 +10,9 @@
         android:id="@+id/imageView"
         android:layout_width="95dp"
         android:layout_height="82dp"
-        android:clickable="?attr/windowActionBar"
         app:srcCompat="@android:drawable/ic_menu_camera"
         tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"/>
 
     <TextView
         android:id="@+id/textView"
