@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -20,14 +19,13 @@ import java.util.ArrayList;
  */
 
 public class JogadorCall  extends ListActivity{
-    private static final int ACTIVITY_EDIT = 1;
     private ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 1);
-        loadJogadores();
+        loadPlayers();
         setListAdapter(new JogadorAdapter(this, jogadores));
     }
 
@@ -35,9 +33,6 @@ public class JogadorCall  extends ListActivity{
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Jogador jogador = (Jogador) this.getListAdapter().getItem(position);
-        Toast.makeText(this, "Student selected: " + jogador.nome, Toast.LENGTH_SHORT).show();
-
-        //Call StudentEdit activity passing info about the selected student
         Uri uri = Uri.parse("tel:" + jogador.telefone);
 
         Intent it = new Intent(Intent.ACTION_CALL, uri);
@@ -48,8 +43,7 @@ public class JogadorCall  extends ListActivity{
     }
 
 
-
-    public void loadJogadores() {
+    public void loadPlayers() {
         FileInputStream fis;
         try {
             fis = this.openFileInput("t.tmp");

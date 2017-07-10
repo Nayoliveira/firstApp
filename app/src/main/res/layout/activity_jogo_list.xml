@@ -1,41 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.ufop.nayara.futmannayara.JogoList">
+
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content" />
+
 
     <Button
         android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nova Pelada"
-        android:onClick="novaPelada"/>
+        android:onClick="novaPelada"
+        android:text="Nova Pelada" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Editar Pelada"
-        android:onClick="editPelada"/>
+        android:onClick="editPelada"
+        android:text="Editar Pelada" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver Pelada"
-        android:onClick="viewPelada"/>
+        android:onClick="viewPelada"
+        android:text="Ver Pelada" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sorteio"
-        android:onClick="sort"/>
+        android:onClick="sort"
+        android:text="Sorteio" />
 
     <Button
         android:id="@+id/button10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Remover Jogador"
-        android:onClick="removePlayer"/>
+        android:onClick="removePlayer"
+        android:text="Remover Jogador" />
+
 </LinearLayout>
