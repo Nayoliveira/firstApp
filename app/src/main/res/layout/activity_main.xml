@@ -14,7 +14,7 @@
             android:layout_width="131dp"
             android:layout_height="92dp"
             android:layout_gravity="center"
-            android:onClick="pelada"
+            android:onClick="jogo"
             android:text="Pelada" />
 
         <Button
@@ -27,6 +27,14 @@
             android:text="Cadastrar Jogador" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="novaPelada"
+        android:text="nova jogo" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="224dp"
@@ -41,13 +49,6 @@
             android:onClick="ver"
             android:text="Jogadores" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="131dp"
-            android:layout_height="92dp"
-            android:layout_gravity="center"
-            android:onClick="pelada"
-            android:text="Pelada" />
 
     </LinearLayout>
 

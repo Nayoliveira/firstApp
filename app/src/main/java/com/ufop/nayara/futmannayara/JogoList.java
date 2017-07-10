@@ -5,28 +5,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-public class JogadoresList extends ListActivity {
-    private ArrayList<Jogador>jogadores = new ArrayList<Jogador>();
+public class JogoList extends ListActivity {
+
+    private ArrayList<Jogo> jogos = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadPlayers();
-        setListAdapter(new JogadorAdapter(this, jogadores));
+        loadPeladas();
+        setListAdapter(new JogoAdapter(this, jogos));
     }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Jogador jogador = (Jogador) this.getListAdapter().getItem(position);
-        Toast.makeText(this, "Player selected: " + jogador.nome, Toast.LENGTH_SHORT).show();
-
-        Intent it = new Intent(this, JogadorCall.class);
+        Intent it = new Intent(this, JogoEdit.class);
         it.putExtra("position", position);
         startActivity(it);
     }
@@ -34,20 +32,32 @@ public class JogadoresList extends ListActivity {
     @Override
     public void onResume() {
         super.onResume();
-        loadPlayers();
-        setListAdapter(new JogadorAdapter(this, jogadores));
+        loadPeladas();
+        setListAdapter(new JogoAdapter(this, jogos));
     }
 
-
-    public void loadPlayers() {
+    public void loadPeladas() {
         FileInputStream fis;
         try {
-            fis = this.openFileInput("t.tmp");
+            fis = this.openFileInput("p.tmp");
             ObjectInputStream ois = new ObjectInputStream(fis);
-            jogadores = (ArrayList<Jogador>) ois.readObject();
+            jogos = (ArrayList<Jogo>) ois.readObject();
             ois.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void sort(View view) {
+
+    }
+
+    public void removePlayer(View view) {
+
+    }
+
+    public void editPelada(View view) {
+        Intent it = new Intent(this, JogoEdit.class);
+        startActivity(it);
     }
 }

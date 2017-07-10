@@ -2,8 +2,8 @@ package com.ufop.nayara.futmannayara;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,52 +25,49 @@ public class JogadorEdit extends AppCompatActivity {
         Intent it = getIntent();
         Bundle params = it.getExtras();
 
-        loadStudents();
+        loadPlayers();
 
         position = (int) params.get("position");
         setContentView(R.layout.activity_jogador_edit);
 
-        //Fill fields with student's data
         EditText et1 = (EditText) findViewById(R.id.editText8);
         et1.setText("" + jogadores.get(position).nome);
+
         EditText et2 = (EditText) findViewById(R.id.editText9);
         et2.setText(jogadores.get(position).telefone);
+
         EditText et3 = (EditText) findViewById(R.id.editText10);
         et3.setText(jogadores.get(position).posicao);
-
 
     }
 
     public void confirm(View view) {
         TextView tv1 = (TextView) findViewById(R.id.editText8);
         String nome = tv1.getText().toString();
+
         TextView tv2 = (TextView) findViewById(R.id.editText9);
         String telefone = tv2.getText().toString();
+
         TextView tv3 = (TextView) findViewById(R.id.editText10);
         String posicao = tv3.getText().toString();
 
-
         Jogador jogador = new Jogador(nome, telefone, posicao);
         jogadores.set(position, jogador);
-        Toast.makeText(this, "Student mat. " + nome + " edited successfully!", Toast.LENGTH_SHORT).show();
-
-        saveStudents();
-
+        savePlayers();
         finish();
     }
 
 
     public void delete(View view) {
-        Toast.makeText(this, "Student mat. " + jogadores.get(position).nome + " removed successfully!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Jogador " + jogadores.get(position).nome + " removido com sucesso!", Toast.LENGTH_SHORT).show();
         jogadores.remove(position);
-
-        saveStudents();
+        savePlayers();
 
         finish();
     }
 
 
-    public void loadStudents() {
+    public void loadPlayers() {
         FileInputStream fis;
         try {
             fis = this.openFileInput("t.tmp");
@@ -82,7 +79,7 @@ public class JogadorEdit extends AppCompatActivity {
         }
     }
 
-    private void saveStudents() {
+    private void savePlayers() {
         FileOutputStream fos;
         try {
             fos = this.openFileOutput("t.tmp", Context.MODE_PRIVATE);

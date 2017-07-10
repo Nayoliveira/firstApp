@@ -1,20 +1,19 @@
 package com.ufop.nayara.futmannayara;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class CadastrarJogador extends AppCompatActivity {
+public class JogadorRegister extends AppCompatActivity {
 
     public ArrayList<Jogador> jogadores = new ArrayList<>();
     ImageView imageView;
@@ -28,13 +27,6 @@ public class CadastrarJogador extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater menuinflater = getMenuInflater();
-        menuinflater.inflate(R.menu.menu_popup, menu);
-
-    }
     public void save(View view){
         TextView tv1 = (TextView) findViewById(R.id.editText2);
         String nome = tv1.getText().toString();
